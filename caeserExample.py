@@ -1,7 +1,18 @@
 # -*- coding: utf-8 -*-
+import sys
 
 # there is max alphabet
 MAX_KEY_SIZE = 26
+
+
+# quit programs 
+def quit():
+	choice = raw_input('Press "q" to quit: ')
+	if choice == 'q':
+		sys.exit(0)
+	else:
+		setVariable()
+
 
 # define to question fo user that encrypt or decrypt
 def getMode():
@@ -44,13 +55,17 @@ def getTranslatedMessage(mode,message,key):
 		else:
 			translated += symbol
 	return translated
-# get all variables from three function 
-mode = getMode()
-message = getMessage()
-key = getKey()
+#set to variable 
+def setVariable():
+	# get all variables from three function 
+	mode = getMode()
+	message = getMessage()
+	key = getKey()
 
-# set the translate messeage for user
-print('Your translate text is:')
-print(getTranslatedMessage(mode,message,key))
+	# set the translate messeage for user
+	print('Your translate text is:')
+	print(getTranslatedMessage(mode,message,key))
+	quit()
 
 
+setVariable()

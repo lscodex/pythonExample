@@ -1,4 +1,17 @@
 # -*- coding: utf-8 -*-
+import sys
+
+# quit programs 
+def quit():
+	choice = raw_input('Press "q" to quit: ')
+	if choice == 'q':
+		sys.exit(0)
+	else:
+		catchPrimeNumber()
+
+
+
+
 def isPrimeNumber(primeNum):
 	if primeNum > 1:   #  must greater than one
 		if(primeNum==2):
@@ -25,6 +38,7 @@ def catchPrimeNumber():
  			else:
 				print(i)
 				break
+	quit()
 
 catchPrimeNumber()
 
